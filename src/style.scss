@@ -1,0 +1,46 @@
+$primary-color: #3498db;
+$bg-color: #f4f4f4;
+$padding: 20px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: $padding;
+}
+
+.card {
+  background: white;
+  padding: $padding;
+  @include border-radius(12px);
+  border: 2px solid darken($primary-color, 10%);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin-top: 20px;
+  
+  .card-title {
+    color: $primary-color;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .card-button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    @include border-radius(4px);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
